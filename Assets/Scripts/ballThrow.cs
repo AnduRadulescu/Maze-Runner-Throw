@@ -68,7 +68,7 @@ public class ballThrow : MonoBehaviour
                         holdingball4 = false;
                         ball4.GetComponent<Rigidbody>().useGravity = true;
                         ball4.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * ballThrowingForce);
-                    }
+                    } 
                     else
                     { 
                         if (Input.GetMouseButtonDown(0) && holdingball5)

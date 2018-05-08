@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Pyramid_1
+  - Monster
   layers:
   - Default
   - TransparentFX

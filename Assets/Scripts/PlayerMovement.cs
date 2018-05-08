@@ -25,12 +25,6 @@ public class PlayerMovement : MonoBehaviour
         //turn off cursor
         Cursor.lockState = CursorLockMode.Locked;
         count = 0;
-        ball1.GetComponent<Rigidbody>().useGravity = false;
-        ball2.GetComponent<Rigidbody>().useGravity = false;
-        ball3.GetComponent<Rigidbody>().useGravity = false;
-        ball4.GetComponent<Rigidbody>().useGravity = false;
-        ball5.GetComponent<Rigidbody>().useGravity = false;
-
     }
   
     void FixedUpdate()
@@ -70,6 +64,9 @@ public class PlayerMovement : MonoBehaviour
             Count.score += scoreValue;
             //playerAudio.Play();
         }
+        if (other.gameObject.CompareTag("Monster"))
+        {
+            other.gameObject.SetActive(false);
+        }
     }
-  
 }
