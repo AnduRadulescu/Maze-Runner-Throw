@@ -19,6 +19,12 @@ public class ballThrow : MonoBehaviour
     public float scoreValue = 50f;
     public float throwingRate;
 
+    public GameObject b1;
+    public GameObject b2;
+    public GameObject b3;
+    public GameObject b4;
+    public GameObject b5;
+
     private float nextFire;
     private bool holdingball = true;
     private bool holdingball2 = true;
@@ -34,6 +40,11 @@ public class ballThrow : MonoBehaviour
         ball4.GetComponent<Rigidbody>().useGravity = false;
         ball5.GetComponent<Rigidbody>().useGravity = false;
 
+        b1.gameObject.SetActive(true);
+        b2.gameObject.SetActive(true);
+        b3.gameObject.SetActive(true);
+        b4.gameObject.SetActive(true);
+        b5.gameObject.SetActive(true);
     }
     
     void Update()
@@ -44,9 +55,9 @@ public class ballThrow : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && holdingball)
             {
                 holdingball = false;
-                //nextFire = Time.time + throwingRate;
                 ball1.GetComponent<Rigidbody>().useGravity = true;
                 ball1.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * ballThrowingForce);
+                b1.gameObject.SetActive(false);
             }
             else {
                 if (Input.GetMouseButtonDown(0) && holdingball2)
@@ -54,13 +65,16 @@ public class ballThrow : MonoBehaviour
                     holdingball2 = false;
                     ball2.GetComponent<Rigidbody>().useGravity = true;
                     ball2.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * ballThrowingForce);
-                }
+                    b2.gameObject.SetActive(false);
+            }
             else { if (Input.GetMouseButtonDown(0) && holdingball3)
                     {
                         holdingball3 = false;
                         ball3.GetComponent<Rigidbody>().useGravity = true;
                         ball3.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * ballThrowingForce);
-                    }
+                        b3.gameObject.SetActive(false);
+                    transform.Rotate(Vector3.up * Time.deltaTime * 5);
+                }
                 else
                 {
                     if (Input.GetMouseButtonDown(0) && holdingball4)
@@ -68,6 +82,7 @@ public class ballThrow : MonoBehaviour
                         holdingball4 = false;
                         ball4.GetComponent<Rigidbody>().useGravity = true;
                         ball4.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * ballThrowingForce);
+                        b4.gameObject.SetActive(false);
                     } 
                     else
                     { 
@@ -76,6 +91,7 @@ public class ballThrow : MonoBehaviour
                             holdingball5 = false;
                             ball5.GetComponent<Rigidbody>().useGravity = true;
                             ball5.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * ballThrowingForce);
+                            b5.gameObject.SetActive(false);
                         }
                     }
                 }
