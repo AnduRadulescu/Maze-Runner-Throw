@@ -4,29 +4,37 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     public Text countText;
-    public GameObject ball;
-    public GameObject playerCamera;
-    public float ballDistance;
-    public float ballThrowingForce;
+    public GameObject ball1;
+    public GameObject ball2;
+    public GameObject ball3;
+    public GameObject ball4;
+    public GameObject ball5;
+    public float scoreValue = -5;
+    
 
-    private bool holdingball = true;
     private float count;
     Animator anim;
     AudioSource playerAudio;
     private Rigidbody playerRigidbody;
     Vector3 movement;
+    private bool holdingball = true;
+
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
         //turn off cursor
         Cursor.lockState = CursorLockMode.Locked;
         count = 0;
-        SetCountText();
-        ball.GetComponent<Rigidbody>().useGravity = false;
+        ball1.GetComponent<Rigidbody>().useGravity = false;
+        ball2.GetComponent<Rigidbody>().useGravity = false;
+        ball3.GetComponent<Rigidbody>().useGravity = false;
+        ball4.GetComponent<Rigidbody>().useGravity = false;
+        ball5.GetComponent<Rigidbody>().useGravity = false;
+
     }
+  
     void FixedUpdate()
     {
-        Vector3 movement;
         float v = Input.GetAxis("Vertical") * speed;
         float h = Input.GetAxis("Horizontal") * speed;
         //Move(h, v);
@@ -38,18 +46,9 @@ public class PlayerMovement : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
-        // Throwing the ball
-        if (holdingball)
-        {
-            ball.transform.position = playerCamera.transform.position + playerCamera.transform.forward * ballDistance;
-            if (Input.GetMouseButtonDown(0))
-            {
-                
-                holdingball = false;
-               ball.GetComponent<Rigidbody>().useGravity = true;
-                ball.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * ballThrowingForce);
-            }
-        }
+    
+        
+
     }
     void Move(float h, float v)
     {
@@ -68,14 +67,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Wall"))
         {
-          count = count - 5;
-          SetCountText();
-          //playerAudio.Play();
+            Count.score += scoreValue;
+            //playerAudio.Play();
         }
     }
-    //Set the count text
-    void SetCountText()
-    {
-        countText.text = "Score: " + count.ToString();
-    }
+  
 }
