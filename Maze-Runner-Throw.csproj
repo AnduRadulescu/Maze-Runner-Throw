@@ -295,6 +295,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\Scripts\ballThrow.cs" />
+    <Compile Include="Assets\Scripts\CameraSwitch.cs" />
     <Compile Include="Assets\Scripts\camMouseLook.cs" />
     <Compile Include="Assets\Scripts\Count.cs" />
     <Compile Include="Assets\Scripts\EnemyManager.cs" />
@@ -303,6 +304,7 @@
     <Compile Include="Assets\Scripts\menu.cs" />
     <Compile Include="Assets\Scripts\PlayerBallsUI.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\sun.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />

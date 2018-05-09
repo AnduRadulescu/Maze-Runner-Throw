@@ -24,6 +24,7 @@ public class ballThrow : MonoBehaviour
     public GameObject b3;
     public GameObject b4;
     public GameObject b5;
+    public Light light;
 
     private float nextFire;
     private bool holdingball = true;
@@ -73,7 +74,9 @@ public class ballThrow : MonoBehaviour
                         ball3.GetComponent<Rigidbody>().useGravity = true;
                         ball3.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * ballThrowingForce);
                         b3.gameObject.SetActive(false);
-                    transform.Rotate(Vector3.up * Time.deltaTime * 5);
+                        light.type = LightType.Spot;
+                        light.intensity = 0;
+                             
                 }
                 else
                 {
