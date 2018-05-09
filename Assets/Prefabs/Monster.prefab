@@ -2831,6 +2831,11 @@ MonoBehaviour:
   hitParticles: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
     type: 2}
   scoreValue: -10
+  monster: {fileID: 1646746141649172}
+  spawnPoints:
+  - {fileID: 4597951930420918, guid: 0a5168e88fdb91e4784b052aeb15e614, type: 2}
+  - {fileID: 4999310735739886, guid: 0a5168e88fdb91e4784b052aeb15e614, type: 2}
+  - {fileID: 4838700889964788, guid: 0a5168e88fdb91e4784b052aeb15e614, type: 2}
 --- !u!135 &135046824386826850
 SphereCollider:
   m_ObjectHideFlags: 1

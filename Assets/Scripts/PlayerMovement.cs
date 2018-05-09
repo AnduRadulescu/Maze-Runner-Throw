@@ -4,13 +4,13 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     public Text countText;
-    public GameObject ball1;
-    public GameObject ball2;
-    public GameObject ball3;
-    public GameObject ball4;
-    public GameObject ball5;
     public float scoreValue = -5;
-    
+
+    public GameObject item;
+    public GameObject tempParent;
+    public Transform guide;
+
+
 
     private float count;
     Animator anim;
@@ -40,9 +40,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
-    
-        
-
     }
     void Move(float h, float v)
     {
@@ -67,6 +64,14 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Monster"))
         {
             other.gameObject.SetActive(false);
+        }
+        if (other.gameObject.CompareTag("TorchEffect"))
+        {
+            item.GetComponent<Rigidbody>().useGravity = false;
+            item.GetComponent<Rigidbody>().isKinematic = true;
+            item.transform.position = guide.transform.position;
+            item.transform.rotation = guide.transform.rotation;
+            item.transform.parent = tempParent.transform;
         }
     }
 }

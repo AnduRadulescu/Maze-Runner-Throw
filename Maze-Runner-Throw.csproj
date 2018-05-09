@@ -302,9 +302,15 @@
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\FpsCounter.cs" />
     <Compile Include="Assets\Scripts\menu.cs" />
+    <Compile Include="Assets\Scripts\MoveObject.cs" />
     <Compile Include="Assets\Scripts\PlayerBallsUI.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\ScneesController.cs" />
     <Compile Include="Assets\Scripts\sun.cs" />
+    <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\torch\scene\script\TorchSlider.cs" />
+    <Compile Include="Assets\torch\scene\script\Torchslider2.cs" />
+    <Compile Include="Assets\torch\scripts\Torchelight.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
@@ -353,6 +359,7 @@
     <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularSmooth.shader" />
     <None Include="Assets\[BFW]SimpleDynamicClouds\ReadMe.txt" />
     <None Include="Assets\[BFW]SimpleDynamicClouds\Shaders\2DClouds.shader" />
+    <None Include="Assets\torch\readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

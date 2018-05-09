@@ -11,7 +11,11 @@ public class EnemyMovement : MonoBehaviour {
 
     Transform player;
     NavMeshAgent nav;
-    
+
+    public GameObject monster;
+ 
+    public Transform[] spawnPoints;
+
     void Awake () {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         nav = GetComponent<NavMeshAgent>();
@@ -27,15 +31,18 @@ public class EnemyMovement : MonoBehaviour {
         {
             Instantiate(hitParticles, transform.position, transform.rotation);
             Count.score += scoreValue;
-            
-           // playerAudio.Play();
-        }
+
+            int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+            Instantiate(monster, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+
+        // playerAudio.Play();
+    }
     }
     public void Dissappear()
     {
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
         Destroy(gameObject, 0.1f);
-        spawn.Respawn();
+       // spawn.Respawn();
     }
 }

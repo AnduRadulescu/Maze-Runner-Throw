@@ -15,9 +15,6 @@ public class EnemyManager : MonoBehaviour {
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);
         Instantiate(monster, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
     }
-    public void Respawn()
-    {
-        Invoke("Spawn", spawnTime);
-    }
+   
 
 }

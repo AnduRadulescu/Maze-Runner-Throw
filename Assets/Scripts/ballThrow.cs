@@ -10,6 +10,8 @@ public class ballThrow : MonoBehaviour
     public GameObject ball3;
     public GameObject ball4;
     public GameObject ball5;
+    public AudioClip sound;
+    public AudioSource soundSource;
     
 
     public GameObject playerCamera;
@@ -46,6 +48,8 @@ public class ballThrow : MonoBehaviour
         b3.gameObject.SetActive(true);
         b4.gameObject.SetActive(true);
         b5.gameObject.SetActive(true);
+
+        soundSource.clip = sound;
     }
     
     void Update()
@@ -59,6 +63,7 @@ public class ballThrow : MonoBehaviour
                 ball1.GetComponent<Rigidbody>().useGravity = true;
                 ball1.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * ballThrowingForce);
                 b1.gameObject.SetActive(false);
+                soundSource.Play();
             }
             else {
                 if (Input.GetMouseButtonDown(0) && holdingball2)
@@ -67,6 +72,7 @@ public class ballThrow : MonoBehaviour
                     ball2.GetComponent<Rigidbody>().useGravity = true;
                     ball2.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * ballThrowingForce);
                     b2.gameObject.SetActive(false);
+                    soundSource.Play();
             }
             else { if (Input.GetMouseButtonDown(0) && holdingball3)
                     {
@@ -76,7 +82,8 @@ public class ballThrow : MonoBehaviour
                         b3.gameObject.SetActive(false);
                         light.type = LightType.Spot;
                         light.intensity = 0;
-                             
+                        soundSource.Play();
+
                 }
                 else
                 {
@@ -86,6 +93,7 @@ public class ballThrow : MonoBehaviour
                         ball4.GetComponent<Rigidbody>().useGravity = true;
                         ball4.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * ballThrowingForce);
                         b4.gameObject.SetActive(false);
+                        soundSource.Play();
                     } 
                     else
                     { 
@@ -95,6 +103,9 @@ public class ballThrow : MonoBehaviour
                             ball5.GetComponent<Rigidbody>().useGravity = true;
                             ball5.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * ballThrowingForce);
                             b5.gameObject.SetActive(false);
+                            soundSource.Play();
+                            changeScene("EndScene");
+                            
                         }
                     }
                 }
@@ -110,5 +121,9 @@ public class ballThrow : MonoBehaviour
             Count.score += scoreValue; 
         }
         return;
+    }
+    public void changeScene(string sceneName)
+    {
+        Application.LoadLevel(sceneName);
     }
 }
