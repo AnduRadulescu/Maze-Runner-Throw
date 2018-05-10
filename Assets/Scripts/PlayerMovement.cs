@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject tempParent;
     public Transform guide;
 
+    public AudioClip sound;
+    public AudioSource soundSource;
+
 
 
     private float count;
@@ -25,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
         //turn off cursor
         Cursor.lockState = CursorLockMode.Locked;
         count = 0;
+
+        soundSource.clip = sound;
     }
   
     void FixedUpdate()
@@ -59,6 +64,8 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             Count.score += scoreValue;
+            soundSource.Stop();
+
             //playerAudio.Play();
         }
         if (other.gameObject.CompareTag("Monster"))

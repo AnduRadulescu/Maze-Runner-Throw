@@ -36,7 +36,7 @@ public class EnemyMovement : MonoBehaviour {
             Instantiate(monster, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
 
         // playerAudio.Play();
-    }
+        }
     }
     public void Dissappear()
     {

@@ -83,6 +83,7 @@ public class ballThrow : MonoBehaviour
                         light.type = LightType.Spot;
                         light.intensity = 0;
                         soundSource.Play();
+                        
 
                 }
                 else

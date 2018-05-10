@@ -10,10 +10,12 @@ public class EnemyManager : MonoBehaviour {
 	public void Start () {
         Invoke("Spawn", spawnTime) ;
 	}
-    void Spawn()
+    void Spawn() 
     {
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);
         Instantiate(monster, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        //int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+        //Instantiate(monster, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
     }
    
 

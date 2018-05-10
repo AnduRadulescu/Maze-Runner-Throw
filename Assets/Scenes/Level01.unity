@@ -1050,7 +1050,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6a9219b8b6c1e764d8432a4dca911afa, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.22
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5352,6 +5352,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 124133556340056124, guid: ed2be9bd281a81340a3a7d11655781a8,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed2be9bd281a81340a3a7d11655781a8, type: 2}
   m_IsPrefabParent: 0
@@ -8699,6 +8704,8 @@ MonoBehaviour:
   item: {fileID: 1212531946}
   tempParent: {fileID: 636950798}
   guide: {fileID: 636950799}
+  sound: {fileID: 8300000, guid: 6a9219b8b6c1e764d8432a4dca911afa, type: 3}
+  soundSource: {fileID: 558404224}
 --- !u!23 &1775325228
 MeshRenderer:
   m_ObjectHideFlags: 0
